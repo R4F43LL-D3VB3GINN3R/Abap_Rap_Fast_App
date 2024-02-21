@@ -15,22 +15,18 @@ Build/Assemble:
 
 Is mantained a system to add-on build.
 The software components are imported to this system.
-ATC verifications are executed.
-And send packages for ADD-ons are created.
+ATC verifications are executed
+And sended packages for ADD-ons are created.
 
-Construção/Teste (Build/Test):
+Build/Test:
 
-Aqui é mantido um sistema para testar a instalação do add-on após a construção. 
-Isso é importante para garantir que o add-on esteja funcionando corretamente antes de ser implementado em ambientes de produção ou de teste mais críticos.
+Is mantained a system to test the installation of the ADD-on after his construction.
 
-Fornecimento (Provide):
+Provide:
 
-Este estágio contém um sistema semelhante ao ambiente de produção (AMT), usado para testar aspectos de multilocação da solução SaaS (separação de clientes, isolamento de dados etc.). 
-Isso é importante para garantir que a solução SaaS seja capaz de lidar com vários clientes de forma eficaz e segura.
+Tests multi-tenancy aspects of the solution SaaS(separations of costumers, data isolation, etc...).
 
-Consumo (Consume):
+Consume:
 
-Este estágio inclui subcontas consumidoras para facilitar testes semelhantes ao ambiente de produção. 
-Isso pode incluir testes de integração entre sistemas, testes de carga e desempenho, entre outros.
-Essa estrutura proporciona um ambiente de desenvolvimento e teste bem definido, permitindo um ciclo de vida de desenvolvimento de software organizado e eficiente. Isso ajuda a garantir a qualidade e a confiabilidade da solução SaaS entregue aos clientes.
+Includes costumers sub-accounts to make it easier similars tests to the production environment 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
