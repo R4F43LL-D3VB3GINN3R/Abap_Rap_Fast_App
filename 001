@@ -13,7 +13,10 @@ Test:
 
 Build/Assemble:
 
-
+Is mantained a system to add-on build.
+The software components are imported to this system.
+ATC verifications are executed.
+And send packages for ADD-ons are created.
 
 Construção/Teste (Build/Test):
 
