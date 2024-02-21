@@ -1,20 +1,19 @@
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 Get an Overview of Building and Maintaining SaaS Applications on SAP BTP, ABAP Environment
 
-Desenvolvimento (Develop):
+Develop:
 
-Nesta fase, são mantidos dois sistemas: o sistema de desenvolvimento contínuo (DEV) e o sistema de correção (COR). 
-O sistema DEV é usado para desenvolvimento contínuo de novas funcionalidades e melhorias. 
-O sistema COR é usado para corrigir bugs e criar patches para versões já lançadas do seu add-on.
+[DEV] -- Continuous development of new funcionalities and enhancements.
+[OOR] -- Fix bugs and create patches for released versions of the ADD-on.
 
-Teste (Test):
+Test:
 
-Este estágio possui dois sistemas: o sistema de teste (TST) e o sistema de garantia de qualidade (QAS). 
-O sistema TST é usado para testar as mudanças lançadas do desenvolvimento, enquanto o sistema QAS é usado para testar correções de bugs e patches para versões já lançadas do add-on.
+[TST] - Tests the released development changes.
+[QAS] - Tests bug fixes and patches for already released versions of the ADD-on.
 
-Construção/Montagem (Build/Assemble):
+Build/Assemble:
 
-Nesta etapa, é mantido um sistema para a montagem do add-on. Os componentes de software são importados para este sistema, verificações ATC (ABAP Test Cockpit) são executadas e pacotes de entrega para o add-on são criados.
+
 
 Construção/Teste (Build/Test):
 
