@@ -1,32 +1,20 @@
-//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-Get an Overview of Building and Maintaining SaaS Applications on SAP BTP, ABAP Environment
+@EndUserText.label : 'UX DEMO TABLE'
+@AbapCatalog.enhancement.category : #NOT_EXTENSIBLE
+@AbapCatalog.tableCategory : #TRANSPARENT
+@AbapCatalog.deliveryClass : #A
+@AbapCatalog.dataMaintenance : #RESTRICTED
 
-Develop:
+define table zrap_uxteam_5552 {
 
-[DEV] -- Continuous development of new funcionalities and enhancements.
-[OOR] -- Fix bugs and create patches for released versions of the ADD-on.
+  key client            : mandt not null;
+  key id                : sysuuid_x16 not null;
+  first_name            : abap.char(100);
+  lastname              : abap.char(100);
+  age                   : abap.numc(4);
+  role                  : abap.char(100);
+  salary                : abap.numc(4);
+  active                : abap_boolean;
+  last_changed_at       : timestampl;
+  local_last_changed_at : timestampl;
 
-Test:
-
-[TST] - Tests the released development changes.
-[QAS] - Tests bug fixes and patches for already released versions of the ADD-on.
-
-Build/Assemble:
-
-Is mantained a system to add-on build.
-The software components are imported to this system.
-ATC verifications are executed
-And sended packages for ADD-ons are created.
-
-Build/Test:
-
-Is mantained a system to test the installation of the ADD-on after his construction.
-
-Provide:
-
-Tests multi-tenancy aspects of the solution SaaS(separations of costumers, data isolation, etc...).
-
-Consume:
-
-Includes costumers sub-accounts to make it easier similars tests to the production environment 
-//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+}
