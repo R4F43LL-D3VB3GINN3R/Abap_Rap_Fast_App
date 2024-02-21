@@ -1,0 +1,34 @@
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+Get an Overview of Building and Maintaining SaaS Applications on SAP BTP, ABAP Environment
+
+Desenvolvimento (Develop):
+
+Nesta fase, são mantidos dois sistemas: o sistema de desenvolvimento contínuo (DEV) e o sistema de correção (COR). 
+O sistema DEV é usado para desenvolvimento contínuo de novas funcionalidades e melhorias. 
+O sistema COR é usado para corrigir bugs e criar patches para versões já lançadas do seu add-on.
+
+Teste (Test):
+
+Este estágio possui dois sistemas: o sistema de teste (TST) e o sistema de garantia de qualidade (QAS). 
+O sistema TST é usado para testar as mudanças lançadas do desenvolvimento, enquanto o sistema QAS é usado para testar correções de bugs e patches para versões já lançadas do add-on.
+
+Construção/Montagem (Build/Assemble):
+
+Nesta etapa, é mantido um sistema para a montagem do add-on. Os componentes de software são importados para este sistema, verificações ATC (ABAP Test Cockpit) são executadas e pacotes de entrega para o add-on são criados.
+
+Construção/Teste (Build/Test):
+
+Aqui é mantido um sistema para testar a instalação do add-on após a construção. 
+Isso é importante para garantir que o add-on esteja funcionando corretamente antes de ser implementado em ambientes de produção ou de teste mais críticos.
+
+Fornecimento (Provide):
+
+Este estágio contém um sistema semelhante ao ambiente de produção (AMT), usado para testar aspectos de multilocação da solução SaaS (separação de clientes, isolamento de dados etc.). 
+Isso é importante para garantir que a solução SaaS seja capaz de lidar com vários clientes de forma eficaz e segura.
+
+Consumo (Consume):
+
+Este estágio inclui subcontas consumidoras para facilitar testes semelhantes ao ambiente de produção. 
+Isso pode incluir testes de integração entre sistemas, testes de carga e desempenho, entre outros.
+Essa estrutura proporciona um ambiente de desenvolvimento e teste bem definido, permitindo um ciclo de vida de desenvolvimento de software organizado e eficiente. Isso ajuda a garantir a qualidade e a confiabilidade da solução SaaS entregue aos clientes.
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
