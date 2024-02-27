@@ -1,27 +1,27 @@
-@AbapCatalog.viewEnhancementCategory: [#NONE]
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'CONSUMPTION VIEW'
-@Metadata.ignorePropagatedAnnotations: true
+@AbapCatalog.viewEnhancementCategory: [#NONE]    //DEFINES THE VIEW ENHANCEMENT CATEGORY IN ABAP CATALOG. 
+@AccessControl.authorizationCheck: #NOT_REQUIRED //DEFINES WETHER AUTHORIZATION VERIFICATION IS REQUIRED TO ACCES THE VIEW.
+@EndUserText.label: 'CONSUMPTION VIEW'           //DEFINES THE LABEL TO THE FINAL USER.
+@Metadata.ignorePropagatedAnnotations: true      //ESPECIFIES WHETHER PROPAGATED ANNOTATIONS FROM CHILD ENTITIES SHOULD BE IGNORED.
 
-define root view entity ZC_ZTABLE001 as projection on ZI_ZTABLE001 as ZTABLE
-{
-    
-    @EndUserText.label: 'Id'
-    key Id,
-    @EndUserText.label: 'First Name'
-    @Search.defaultSearchElement: true
-    Firstname, 
-    @EndUserText.label: 'Last Name'
-    @Search.defaultSearchElement: true
-    Lastname, 
-    @EndUserText.label: 'Age'
-    Age, 
-    @EndUserText.label: 'Role'
-    @Search.defaultSearchElement: true
-    Role,
-    @EndUserText.label: 'Active'
-    Active,
-    LastChangedAt,
-    LocalLastChangedAt
+define root view entity ZC_ZTABLE001 as projection on ZI_ZTABLE001 as ZTABLE //DEFINES A ROOT VIEW ENTITY NAMED ZC_ZTABLE001...
+{                                                                            //THIS VIEW IS DESIGNED BASED ON THE INTERFACE VIEW ZI_ZTABLE001...
+                                                                             //AND RENAMED TO ZTABLE
+    @EndUserText.label: 'Id'           //DEFINES THE LABEL.
+    key Id,                            //DEFINES THE PRIMARY KEY OF THE FIELD VIEW.
+    @EndUserText.label: 'First Name'   //DEFINES THE LABEL.
+    @Search.defaultSearchElement: true //DEFINES THE PATTERN FIELDSEARCH.
+    Firstname,                         //DEFINES THE FIELD.
+    @EndUserText.label: 'Last Name'    //DEFINES THE LABEL.
+    @Search.defaultSearchElement: true //DEFINES THE PATTERN FIELDSEARCH.
+    Lastname,                          //DEFINES THE FIELD.
+    @EndUserText.label: 'Age'          //DEFINES THE LABEL.
+    Age,                               //DEFINES THE FIELD.
+    @EndUserText.label: 'Role'         //DEFINES THE LABEL.
+    @Search.defaultSearchElement: true //DEFINES THE PATTERN FIELDSEARCH.
+    Role,                              //DEFINES THE FIELD.
+    @EndUserText.label: 'Active'       //DEFINES THE PATTERN FIELDSEARCH.
+    Active,                            //DEFINES THE FIELD.
+    LastChangedAt,                     //DEFINES THE FIELD.
+    LocalLastChangedAt                 //DEFINES THE FIELD.
 
 }
