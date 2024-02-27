@@ -1,21 +1,22 @@
-@AbapCatalog.sqlViewName: 'ZZI_ZTABLE001'
-@AbapCatalog.compiler.compareFilter: true
-@AbapCatalog.preserveKey: true
-@AccessControl.authorizationCheck: #NOT_REQUIRED
-@EndUserText.label: 'INTERFACE VIEW'
-define root view ZI_ZTABLE001 as select from zrap_table001
+@AbapCatalog.sqlViewName: 'ZZI_ZTABLE001'                  //DEFINES DA VIEW NAME ON THE SQL DATABASE.
+@AbapCatalog.compiler.compareFilter: true                  //INDICATES WHETHER THE VIEW SHOULD BE CONSIDERED IN THE BUILD COMPARARISON.
+@AbapCatalog.preserveKey: true                             //INDICATES WHETER THE PRIMARY KEY OF THE VIEW SHOULD BE PRESERVED WHEN CREATING THE VIEW IN DATABASE. 
+@AccessControl.authorizationCheck: #NOT_REQUIRED           //DEFINES WHETHER THE AUTHORIZATION VERIFICATION IS REQUIRED TO ACCESS THE VIEW.
+@EndUserText.label: 'INTERFACE VIEW FROM ZRAP_TABLE001'    //DEFINES THE LABEL TO THE FINAL USER.
+
+define root view ZI_ZTABLE001 as select from zrap_table001 //DEFINES THE ROOT VIEW NAMED ZI_ZTABLE AND SELECTS THE DATES FROM THE TRANSPARENT TABLE.
 {
 
-    key id as Id,
-    firstname as Firstname, 
-    lastname as Lastname,
-    age as Age,
-    role as Role,
-    salary as Salary,
-    active as Active,
-    @Semantics.systemDateTime.lastChangedAt: true
-    last_changed_at as LastChangedAt,
-    @Semantics.systemDateTime.localInstanceLastChangedAt: true
-    local_last_changed_at as LocalLastChangedAt
+    key id                as Id,                               //DEFINE FIELD AS...
+    firstname             as Firstname,                        //DEFINE FIELD AS...               
+    lastname              as Lastname,                         //DEFINE FIELD AS...
+    age                   as Age,                              //DEFINE FIELD AS...
+    role                  as Role,                             //DEFINE FIELD AS...
+    salary                as Salary,                           //DEFINE FIELD AS...
+    active                as Active,                           //DEFINE FIELD AS...
+    @Semantics.systemDateTime.lastChangedAt: true              //SEMANTICS - LAST UPDATE.
+    last_changed_at       as LastChangedAt,                    //DEFINE FIELD AS...
+    @Semantics.systemDateTime.localInstanceLastChangedAt: true //SEMANTICS - LAST LOCAL UPDATE.
+    local_last_changed_at as LocalLastChangedAt                //DEFINE FIELD AS...
      
 }
