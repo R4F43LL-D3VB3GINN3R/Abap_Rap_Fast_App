@@ -2,6 +2,7 @@
 @AccessControl.authorizationCheck: #NOT_REQUIRED //DEFINES WETHER AUTHORIZATION VERIFICATION IS REQUIRED TO ACCES THE VIEW.
 @EndUserText.label: 'CONSUMPTION VIEW'           //DEFINES THE LABEL TO THE FINAL USER.
 @Metadata.ignorePropagatedAnnotations: true      //ESPECIFIES WHETHER PROPAGATED ANNOTATIONS FROM CHILD ENTITIES SHOULD BE IGNORED.
+@Metadata.allowExtensions: true
 
 define root view entity ZC_ZTABLE001 as projection on ZI_ZTABLE001 as ZTABLE //DEFINES A ROOT VIEW ENTITY NAMED ZC_ZTABLE001...
 {                                                                            //THIS VIEW IS DESIGNED BASED ON THE INTERFACE VIEW ZI_ZTABLE001...
@@ -19,6 +20,8 @@ define root view entity ZC_ZTABLE001 as projection on ZI_ZTABLE001 as ZTABLE //D
     @EndUserText.label: 'Role'         //DEFINES THE LABEL.
     @Search.defaultSearchElement: true //DEFINES THE PATTERN FIELDSEARCH.
     Role,                              //DEFINES THE FIELD.
+    @EndUserText.label: 'Salary'       //DEFINES THE LABEL.
+    Salary,                            //DEFINES THE FIELD.
     @EndUserText.label: 'Active'       //DEFINES THE PATTERN FIELDSEARCH.
     Active,                            //DEFINES THE FIELD.
     LastChangedAt,                     //DEFINES THE FIELD.
