@@ -1,0 +1,55 @@
+@Metadata.layer: #CORE //Indicates the metadata layer in wich the informations are being defined.
+
+@UI: { //Defines the properties from users interface (UI) to the view or table.
+    headerInfo: { typeName: 'ZTABLE001',                                                   //Single name.                                          
+                  typeNamePlural: 'ZTABLE001',                                             //Plural name.
+                  title: { type: #STANDARD, label: 'ZTABLE001', value: 'Id' }   },         //Title.
+                  presentationVariant: [ { sortOrder: [{ by: 'Id', direction:  #ASC }]}]}  //This is an array that defines the order in wich the data is presented in the view.
+                  
+annotate view ZC_ZTABLE001 with //Annotates the preview with the UI settings provided within the tile.
+{   //Defines a set properties for a specific aspect of the view.
+    @UI.facet: [ { id:       'ZTABLE001',               //Unique facet identifier.
+                  purpose:   #STANDARD,                 //Defines the purpose of the facet.
+                  type:      #IDENTIFICATION_REFERENCE, //Defines the type of the facet.
+                  label:     'ZTABLE',                  //Defines the label of the facet.
+                  position:  10 } ]                     //Defines the position of the facet.
+                  
+    //The Declarations UI defines the dispay properties for each field in the table.
+                  
+    @UI: { identification: [{ position: 1, label: 'Id' } ] } //Defines id like identification field.
+        Id;
+        
+    @UI: { lineItem:       [ { position: 20 } ],
+           identification: [ { position: 20 } ],
+           selectionField: [ { position: 20 } ]}
+        Firstname;
+    
+    @UI: { lineItem:       [ { position: 30 } ],
+           identification: [ { position: 30 } ],
+           selectionField: [ { position: 30 } ] }
+        Lastname;
+        
+    @UI: { lineItem:       [ { position: 40 } ],
+           identification: [ { position: 40 } ] }
+        Age;
+        
+    @UI: { lineItem:       [ { position: 50 } ],
+           identification: [ { position: 50 } ]}
+        Role;
+        
+    @UI: { lineItem:       [ { position: 60 } ],
+           identification: [ { position: 60 } ],
+           selectionField: [ { position: 60 } ] }
+        Salary;
+        
+    @UI: { lineItem:       [ { position: 70 }, { type: #FOR_ACTION, dataAction: 'setActive', label: 'Set Active' } ],
+           identification: [ { position: 70 }, { type: #FOR_ACTION, dataAction: 'setActive', label: 'Set Active' } ] }
+        Active;
+        
+    @UI.hidden: true         //This field is hidden in the UI.
+        LastChangedAt;
+    
+    @UI.hidden: true
+        LocalLastChangedAt;  //This field is hidden in the UI.
+    
+}
