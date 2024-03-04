@@ -1,0 +1,4 @@
+@EndUserText.label: 'SERVICE DEFINITION FOR ZTABLE005'
+define service Z_EXPOSE_ZTABLE005 {
+  expose ZC_ZTABLE005 as ZTABLE;
+}
