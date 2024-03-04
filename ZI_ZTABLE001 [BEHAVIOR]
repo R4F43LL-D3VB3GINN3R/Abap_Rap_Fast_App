@@ -1,0 +1,36 @@
+managed; //INDICATES THAT ID FIELD WILL BE AUTOMATICALLY MANAGED BY THE SYSTEM
+
+define behavior for ZI_ZTABLE005 alias ZTABLE  //DEFINES TABLE BEHAVIOR WITH ALIAS IMPLEMENTED BY THE CLASS WITH A UNIQUE 
+implementation in class zbp_i_ztable005 unique //...IMPLEMENTATION FROM PERSISTENT TRANSPARENT TABLE
+persistent table zrap_table005
+
+lock master                    //THE LOCK WILL BE APPLIED DURING SYSTEM UPDATE AT THE SAME SYSTEM LEVEL.
+etag master LocalLastChangedAt //CONTROLS THE DATA VERSION FOR EACH UPDATE 
+
+{
+  create; //CREATE TABLE
+  update; //UPDATE TABLE
+  delete; //DELETE TABLE
+
+  field ( numbering : managed, readonly ) Id;           //FILD ID IS AUTO INCREMENTED AND READONLY, MANAGED BY THE SYSTEM.
+  field ( readonly ) Active, Salary;                    //ACTIVE AND SALARY IS READONLY.
+  field ( readonly ) LastChangedAt, LocalLastChangedAt; //THESE FIELDS IS READONLY.
+
+  action ( features : instance ) setActive result [1] $self; //DEFINES AN ACTION NAMED setActive THAT ACTIVATES THE FIELD AND RETURN THE OBJECT.
+  determination changeSalary on save { field Role; }         //THE DETERMINATION CHANGES THE SALARY FIELD BASED ON LOGIC FIELD
+  validation validateAge on save { field Age; create; }      //CREATE A NEW FIELD IF THE VALIDATION WILL BE CORRECT.
+
+  mapping for ZRAP_TABLE005 //DEFINES THE MAPPING BETWEEN THE INTERFACE VIEW AND THE TRANSPARENT TABLE.
+  {
+    Id = id;
+    Firstname = firstName;
+    Lastname = lastName;
+    Age = age;
+    Role = role;
+    Salary = salary;
+    Active = active;
+    LastChangedAt = last_changed_at;
+    LocalLastChangedAt = local_last_changed_at;
+   }
+
+}
