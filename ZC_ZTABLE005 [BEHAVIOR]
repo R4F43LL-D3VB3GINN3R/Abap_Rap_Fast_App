@@ -1,0 +1,11 @@
+projection;
+
+define behavior for ZC_ZTABLE005 alias ZTABLE
+use etag
+{
+  use create;
+  use update;
+  use delete;
+
+  use action setActive;
+}
